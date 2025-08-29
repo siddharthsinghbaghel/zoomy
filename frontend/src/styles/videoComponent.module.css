@@ -1,0 +1,336 @@
+/* .meetVideoContainer {
+    position: relative;
+    height: 100vh;
+    background: rgb(1, 4, 48);
+}
+
+.meetUserVideo {
+    position: absolute;
+    bottom: 10vh;
+    height: 20vh;
+    width: auto;
+    left: 0;
+    border-radius: 20px;
+}
+
+.buttonContainers {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    text-align: center;
+}
+
+.buttonContainers svg {
+    font-size: 3rem;
+}
+
+.conferenceView { 
+
+    display: flex;
+    
+    padding: 10px;
+    gap: 10px;
+}
+
+.conferenceView  video {
+    width: 40vw;
+    height: 20vh;
+    min-width: 30vw;
+    border-radius: 10px;
+}
+
+.chatRoom {
+    position: absolute;
+    height: 90vh;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    width: 30vw;
+    padding-inline: 20px;
+}
+
+.chatContainer {
+    position: relative;
+    height: 100%;
+}
+
+
+.chattingArea {
+    position: absolute;
+    bottom: 0;
+} */
+
+/* Dark, cinematic background */
+/* Dark, cinematic background */
+
+/* Lobby Section */
+/* Lobby Page */
+/* Lobby Page */
+/* Lobby / Username Entry Screen */
+.lobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #0d1a40, #1a2b5c); /* darker sky-blue gradient */
+  color: #fff;
+  position: relative;
+}
+
+.lobby h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.previewWrap {
+  margin-top: 20px;
+  width: 250px;
+  height: 200px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.previewVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Meet Video Container */
+.meetVideoContainer {
+  width: 100%;
+  height: 100vh;
+  background: #0d1a40; /* slightly darker than sky blue */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-top: 20px; /* space for top buttons */
+}
+
+/* Draggable Local Video */
+.meetUserVideo {
+  width: 250px;
+  height: 200px;
+  border: 2px solid #1abc9c; /* bright border for visibility */
+  border-radius: 10px;
+  object-fit: cover;
+  position: absolute;
+  top: 80px; /* adjusted to avoid top buttons */
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Conference View */
+.conferenceView {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  z-index: 1000;
+}
+
+.conferenceView video {
+  width: 250px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #1abc9c;
+}
+
+/* Top Buttons */
+.buttonContainersBottom {
+  position: fixed;
+  top: 20px; /* moved to top */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  z-index: 2000;
+  padding: 10px 0;
+}
+
+.buttonContainersBottom .MuiIconButton-root {
+  background: #1a2b5c; /* darker blue background */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.buttonContainersBottom .MuiIconButton-root:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 15px #1abc9c; /* glow effect */
+}
+
+/* Chat Modal */
+.chatRoom {
+  position: absolute; /* use absolute for draggable */
+  top: 50%;           
+  left: 50%;          
+  transform: translate(-50%, -50%);
+  background: #0a142d; /* old color */
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  max-width: 90%;      /* responsive */
+  max-height: 80%;     /* responsive height */
+  overflow: hidden;    /* prevent content overflow */
+  z-index: 3000;
+  box-shadow: 0px 0px 20px #1abc9c;
+  cursor: grab;        /* indicate draggable */
+}
+
+/* Optional drag handle */
+.chatHeader {
+  font-weight: bold;
+  color: #1abc9c;
+  margin-bottom: 10px;
+  cursor: grab;
+  user-select: none;
+}
+
+/* Chat Content */
+.chatContainer h1 {
+  color: #1abc9c;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.chattingDisplay {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #102a50; /* old color */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.chattingDisplay p {
+  color: #eee;
+  margin: 0;
+}
+
+.chattingArea {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;   /* responsive */
+}
+
+/* Chat Input */
+.chattingArea input,
+.chattingArea .MuiOutlinedInput-root input {
+  background: #1a2b5c;  /* old color */
+  color: #ffffff;       /* white text while typing */
+  border-radius: 8px;
+  padding: 8px;
+  flex: 1 1 auto;      /* responsive input width */
+  min-width: 0;        /* prevents overflow in flex */
+}
+
+.chattingArea .MuiOutlinedInput-notchedOutline {
+  border-color: #1abc9c; /* old color */
+}
+
+.chattingArea .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #16a085;
+}
+
+.chattingArea .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #1abc9c;
+}
+
+/* Scrollbar for chat */
+.chattingDisplay::-webkit-scrollbar-track {
+  background-color: #1a2b5c;
+}
+
+.chattingDisplay::-webkit-scrollbar-thumb {
+  background-color: #1abc9c;
+  border-radius: 3px;
+}
+
+
+
+/* Whiteboard overlay covers meeting area */
+.wb-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1200; /* above videos & buttons */
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  pointer-events: auto;
+}
+
+/* Whiteboard container */
+.wb-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+}
+
+/* Toolbar */
+.wb-toolbar {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(17, 24, 39, 0.9);
+  color: #fff;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 12px;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.wb-btn {
+  background: #374151;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.wb-btn.active { background: #7c3aed; }
+.wb-btn.close { background: #ef4444; }
+
+.wb-swatch input {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.wb-range {
+  width: 120px;
+}
+
+/* Canvas fills area */
+.wb-canvas-wrap {
+  position: absolute;
+  inset: 0;
+}
+.wb-canvas-wrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+  background: transparent;
+}
